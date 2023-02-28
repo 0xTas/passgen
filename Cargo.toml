@@ -1,0 +1,11 @@
+[package]
+name = "passgen"
+version = "0.1.1"
+edition = "2021"
+license = "MIT"
+authors = ["Zach Griffin (0xTas) <root@0xtas.dev>"]
+
+
+[dependencies]
+rand = "0.8.5"
+clap = {version = "4.1.7", features = ["derive"]}
