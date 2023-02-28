@@ -3,14 +3,14 @@
 
 ### Usage
 
-Program Defaults:
-    - Password Length: 20
-    - Uses Spaces: False
+Program Defaults: <br>
+    - Password Length: 20 <br>
+    - Uses Spaces: False <br>
 
-Options:
-    - Password Length: -l
-    - Use Spaces: -s
-    - Command Help: --help
-    - Version Info: --version
+Options: <br>
+    - Password Length: -l <br>
+    - Use Spaces: -s <br>
+    - Command Help: --help <br>
+    - Version Info: --version <br>
 
 `./passgen [options]`
