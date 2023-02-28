@@ -1,4 +1,4 @@
-## A simple CLI tool to generate random strings that can be used for passowrds or whatever.
+## A simple CLI tool to generate random strings that can be used for passwords or whatever.
 <br>
 
 ### Usage
