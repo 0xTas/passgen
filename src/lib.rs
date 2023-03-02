@@ -13,11 +13,11 @@ pub const MIN_LEN: u8 = 8;
 pub const MAX_LEN: u8 = u8::MAX;
 
 const SPACE_CHAR: char = ' ';
-const DIGITS: &[u8] = &[0,1,2,3,4,5,6,7,8,9];
 const SYMBOLS: &[char] = &['`', '~', '!', '@', '#', '$', '%', '^', 
                             '&', '*', '(', ')', '-', '_', '=', '+',
                             '[', ']', '{', '}', '\\', '|', ';', ':',
                             '\'', '"', ',', '.', '<', '>', '/', '?'];
+const DIGITS: &[char] = &['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 const LETTERS_LOWER: &[char] = &['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
                                 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q',
                                 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
@@ -66,11 +66,7 @@ impl PassGen {
                 if set_choice <= 7 {
                     key.push(SPACE_CHAR);
                 }else if set_choice < 35 {
-                    key.push(
-                        char::from_digit(
-                            *DIGITS.choose(&mut rng).expect("Slice should not be empty!") as u32,
-                            10).expect("Expected a valid digit!")
-                    );
+                    key.push(*DIGITS.choose(&mut rng).expect("Slice should not be empty!"));
                 }else if set_choice < 55 {
                     key.push(*SYMBOLS.choose(&mut rng).expect("Slice should not be empty!"));
                 }else if set_choice < 75 {
@@ -85,11 +81,7 @@ impl PassGen {
             for _ in 0..self.length {
                 let set_choice: u8 = set_choice.sample(&mut rng);
                 if set_choice < 20 {
-                    key.push(
-                        char::from_digit(
-                            *DIGITS.choose(&mut rng).expect("Slice should not be empty!") as u32,
-                            10).expect("Expected a valid digit!")
-                    );
+                    key.push(*DIGITS.choose(&mut rng).expect("Slice should not be empty!"));
                 }else if set_choice < 40 {
                     key.push(*SYMBOLS.choose(&mut rng).expect("Slice should not be empty!"));
                 }else if set_choice < 60 {
